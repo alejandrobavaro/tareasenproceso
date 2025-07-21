@@ -1,0 +1,26 @@
+/*-----------------SASS A CSS------------------------*/
+//------------GENERAL--------------//
+@import "./_01-General/App";
+
+//------------HEADER--------------//
+
+@import "./_03-Componentes/HeaderUnificado";
+
+
+@import "./_03-Componentes/Contacto";
+@import "./_03-Componentes/ConsultasAyuda";
+
+
+//-----------HOME - MAIN-----------------//
+@import "./_03-Componentes/MainPublicidadSlider";
+@import "./_03-Componentes/MainContent";
+
+
+@import "./_03-Componentes/MainTareasEnProceso";
+
+//--------------FOOTER----------------//
+@import "./_03-Componentes/Footer";
+@import "./_03-Componentes/FooterGondraWorldDev";
+
+
+

@@ -1,0 +1,133 @@
+/* ==================== CONTENEDOR PRINCIPAL ==================== */
+.contacto-full-width-container {
+  width: 100%;
+  padding: 2rem 1rem;
+  // background-color: #f8f9fa;
+}
+
+.expanded-form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  // background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.main-form-title {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* ==================== FORMULARIO EXPANDIDO ==================== */
+.expanded-contact-form {
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  label {
+    font-weight: 500;
+    color: #4a5568;
+    font-size: 1.1rem;
+  }
+
+  input, textarea {
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: #0b2261;
+      box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.2);
+      outline: none;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 180px;
+  }
+
+  &.full-width {
+    grid-column: span 2;
+
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+  }
+}
+
+/* ==================== BOTÓN DE ENVÍO ==================== */
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn-large {
+  background-color: #1c3894;
+  color: white;
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  &:hover {
+    background-color: #3182ce;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(49, 130, 206, 0.3);
+  }
+
+  i {
+    font-size: 1.2rem;
+  }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+  .expanded-form-container {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .expanded-form-container {
+    padding: 1.5rem;
+  }
+  
+  .main-form-title {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
+  
+  .submit-btn-large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+}

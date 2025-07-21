@@ -1,0 +1,213 @@
+/* ============================================= */
+/* ESTILOS BASE - MOBILE FIRST (menos de 768px) */
+/* ============================================= */
+
+.contacto-redes-wrapper {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(42, 62, 80, 0.05);
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Contenedor del logo y texto */
+.logo-container {
+  width: 100%;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Enlace del logo */
+.logo-link {
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+/* Imagen del logo */
+.logo-img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.2s ease;
+}
+
+/* Texto "Calculadora Retro" */
+.logo-texto {
+  color: #2a3e50;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Parte "Retro" con estilo especial */
+.logo-texto-retro {
+  color: #4a6fa5;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Efecto hover para el logo */
+.logo-link:hover .logo-img {
+  transform: scale(1.03);
+}
+
+/* Contenedor de redes sociales */
+.redes-container {
+  width: 100%;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Título de redes sociales */
+.redes-titulo {
+  color: #2a3e50;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #4a6fa5;
+}
+
+/* Lista de redes sociales */
+.redes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Items de redes sociales */
+.red-social-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  color: #2a3e50;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Iconos de redes */
+.red-icon {
+  font-size: 1.2rem;
+  color: #4a6fa5;
+  transition: all 0.2s ease;
+}
+
+/* Texto de redes */
+.red-text {
+  font-size: 0.95rem;
+}
+
+/* Efecto hover para items de redes */
+.red-social-item:hover {
+  background-color: #2a3e50;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.red-social-item:hover .red-icon {
+  color: white;
+}
+
+/* ============================================= */
+/* BREAKPOINT TABLET (768px en adelante) */
+/* ============================================= */
+@media (min-width: 768px) {
+  .contacto-redes-wrapper {
+    flex-direction: row;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .logo-container {
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .redes-container {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .logo-texto {
+    font-size: 2rem;
+  }
+
+  .redes-titulo {
+    font-size: 1.4rem;
+  }
+
+  .redes-lista {
+    gap: 15px;
+  }
+
+  .red-social-item {
+    padding: 14px 18px;
+  }
+
+  .red-icon {
+    font-size: 1.3rem;
+  }
+
+  .red-text {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================= */
+/* BREAKPOINT ESCRITORIO (1024px en adelante) */
+/* ============================================= */
+@media (min-width: 1024px) {
+  .contacto-redes-wrapper {
+    padding: 25px;
+    gap: 30px;
+  }
+
+  .logo-container, .redes-container {
+    padding: 25px;
+  }
+
+  .logo-texto {
+    font-size: 2.2rem;
+  }
+
+  .redes-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .redes-lista {
+    gap: 18px;
+  }
+
+  .red-social-item {
+    padding: 16px 20px;
+  }
+
+  .red-icon {
+    font-size: 1.4rem;
+  }
+}

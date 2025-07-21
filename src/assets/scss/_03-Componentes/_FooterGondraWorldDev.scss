@@ -1,0 +1,53 @@
+.trademarkGondraFooter {
+  text-align: center;
+  margin: 0;
+  padding: 0px 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.textoFooterAutor {
+  border-radius: 20px;
+  width: 100%;
+  padding: 0px;
+  color: #ffffff;
+}
+
+.footer-dev-link {
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    .textoFooterGondraWorld {
+      color: #b2f6ff;
+      transform: scale(1.1) rotate(-2deg);
+    }
+
+    .diamond-icon {
+      animation: spin 1s linear infinite;
+      color: #00d0ff;
+    }
+  }
+}
+
+.textoFooterGondraWorld {
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.diamond-icon {
+  color: #afcfd4;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+/* Animación de giro */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

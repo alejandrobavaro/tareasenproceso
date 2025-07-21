@@ -1,0 +1,79 @@
+/* ==================== ESTILOS BASE ==================== */
+/* Reset básico y tipografía */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  color: #2d3748; // Color de texto principal
+  line-height: 1.5;
+}
+
+/* ==================== ESTRUCTURA PRINCIPAL ==================== */
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  min-height: calc(100vh - 120px); // Altura ajustada considerando header y footer
+
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 2rem;
+  }
+}
+
+/* Contenedor del contenido */
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Divisor sutil */
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+/* ==================== ESTILOS PARA LA CALCULADORA ==================== */
+/* Contenedor de la calculadora (se heredarán estos estilos) */
+.calculator-container {
+  // background-color: white;
+  border-radius: 12px;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 767px) {
+  /* Estilos para móvil */
+  .main-container {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Estilos para tablet */
+  .main-container {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Estilos para escritorio */
+  .main-container {
+    padding: 1.5rem;
+  }
+}
