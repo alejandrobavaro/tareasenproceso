@@ -12,7 +12,7 @@ function MainContent() {
         <MainTareasEnProceso />
         
         {/* Componente de publicidad - se muestra debajo del gestor de tareas */}
-        <MainPublicidadSlider />
+        {/* <MainPublicidadSlider /> */}
       </div>
     </main>
   );
