@@ -3,6 +3,8 @@ import { FaTrash, FaCheck } from "react-icons/fa";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import "../assets/scss/_03-Componentes/_MainTareasEnProceso.scss";
 
+// ------------ CONFIGURACIÓN INICIAL ------------ //
+// Opciones de colores para las tareas
 const colorOptions = [
   { label: "Rojo", value: "#FF5733" },
   { label: "Verde", value: "#28A745" },
@@ -11,63 +13,48 @@ const colorOptions = [
   { label: "Gris", value: "#6C757D" },
 ];
 
+// Tareas iniciales organizadas por columnas
 const initialTasks = {
   todo: [
-    {
-      title: "Tarea 1",
-      // description: "Descripción 1",
-      color: "#FF5733",
-      // date: "2024-08-12",
-      // priority: "medium",
-      // assignedTo: "Nombre 1",
-    },
+    { title: "Tarea 1", color: "#FF5733" },
   ],
   doing: [
-    {
-      title: "Tarea 2",
-      // description: "Descripción 2",
-      color: "#28A745",
-      // date: "2024-08-12",
-      // priority: "high",
-      // assignedTo: "Nombre 2",
-    },
+    { title: "Tarea 2", color: "#28A745" },
   ],
   done: [
-    {
-      title: "Tarea 3",
-      // description: "Descripción 3",
-      color: "#007BFF",
-      // date: "2024-08-12",
-      // priority: "low",
-      // assignedTo: "Nombre 3",
-    },
+    { title: "Tarea 3", color: "#007BFF" },
   ],
   blocked: [
-    {
-      title: "Tarea 4",
-      // description: "Descripción 4",
-      color: "#FFC107",
-      // date: "2024-08-12",
-      // priority: "medium",
-      // assignedTo: "Nombre 4",
-    },
+    { title: "Tarea 4", color: "#FFC107" },
   ],
 };
 
+// Nombres de las columnas
 const columns = ["todo", "doing", "done", "blocked"];
 
+// ------------ COMPONENTE PRINCIPAL ------------ //
 function MainTareasEnProceso() {
+  // Estado para las tareas
   const [tasks, setTasks] = useState(initialTasks);
+  
+  // Estado para nueva tarea
   const [newTask, setNewTask] = useState({
     title: "",
-    // description: "",
     color: "#333",
     date: "",
     priority: "medium",
     assignedTo: "",
   });
-  const [editTaskDetails, setEditTaskDetails] = useState({ task: null, column: null });
+  
+  // Estado para edición de tarea
+  const [editTaskDetails, setEditTaskDetails] = useState({ 
+    task: null, 
+    column: null 
+  });
 
+  // ------------ MANEJADORES DE EVENTOS ------------ //
+  
+  // Maneja cambios en tareas existentes
   const handleTaskChange = (e, task, column) => {
     const { name, value } = e.target;
     setTasks((prevTasks) => ({
@@ -78,21 +65,22 @@ function MainTareasEnProceso() {
     }));
   };
 
+  // Maneja cambios en el formulario de nueva tarea
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewTask({ ...newTask, [name]: value });
   };
 
+  // Envía nueva tarea
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(newTask).every((field) => field.trim() !== "")) {
+    if (newTask.title.trim() !== "") {
       setTasks((prevTasks) => ({
         ...prevTasks,
         todo: [...prevTasks.todo, newTask],
       }));
       setNewTask({
         title: "",
-        description: "",
         color: "#333",
         date: "",
         priority: "medium",
@@ -101,12 +89,12 @@ function MainTareasEnProceso() {
     }
   };
 
+  // Mueve tareas entre columnas
   const moveTask = (task, fromColumn, direction) => {
     const currentIndex = columns.indexOf(fromColumn);
     const newIndex = currentIndex + direction;
     if (newIndex >= 0 && newIndex < columns.length) {
       const newColumn = columns[newIndex];
-
       setTasks((prevTasks) => {
         const newTasks = { ...prevTasks };
         newTasks[fromColumn] = prevTasks[fromColumn].filter((t) => t !== task);
@@ -116,8 +104,7 @@ function MainTareasEnProceso() {
     }
   };
 
-
-
+  // Elimina tareas
   const handleTaskDelete = (task, column) => {
     setTasks((prevTasks) => {
       const updatedTasks = { ...prevTasks };
@@ -126,8 +113,10 @@ function MainTareasEnProceso() {
     });
   };
 
+  // ------------ RENDERIZADO ------------ //
   return (
     <div className="mainTareasEnProceso">
+      {/* Formulario para agregar nuevas tareas */}
       <form className="task-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Título</label>
@@ -140,8 +129,9 @@ function MainTareasEnProceso() {
             required
           />
         </div>
+        
         <div className="form-group">
-          <label className="textoDescripcion">Descripción</label>
+          <label>Descripción</label>
           <textarea 
             name="description"
             value={newTask.description}
@@ -149,6 +139,7 @@ function MainTareasEnProceso() {
             placeholder="Descripción"
           />
         </div>
+        
         <div className="form-group">
           <label>Fecha</label>
           <input
@@ -158,6 +149,7 @@ function MainTareasEnProceso() {
             onChange={handleInputChange}
           />
         </div>
+        
         <div className="form-group">
           <label>Color:</label>
           <div className="color-options">
@@ -173,6 +165,7 @@ function MainTareasEnProceso() {
             ))}
           </div>
         </div>
+        
         <div className="form-group">
           <label>Prioridad</label>
           <select
@@ -185,6 +178,7 @@ function MainTareasEnProceso() {
             <option value="high">Alta</option>
           </select>
         </div>
+        
         <div className="form-group">
           <label>Asignado a</label>
           <input
@@ -195,11 +189,13 @@ function MainTareasEnProceso() {
             placeholder="Asignado a"
           />
         </div>
+        
         <button type="submit" className="add-task-button">
           Agregar
         </button>
       </form>
 
+      {/* Columnas de tareas */}
       <div className="task-columns">
         {columns.map((status) => (
           <div key={status} className="task-column">
@@ -213,109 +209,49 @@ function MainTareasEnProceso() {
                       className="task-item"
                       style={{ backgroundColor: task.color }}
                     >
-                      {editTaskDetails.task === task && editTaskDetails.column === status ? (
-                        <div className="task-edit">
-                          <input
-                            type="text"
-                            name="title"
-                            value={task.title}
-                            onChange={(e) => handleTaskChange(e, task, status)}
-                          />
-                          <textarea
-                            name="description"
-                            value={task.description}
-                            onChange={(e) => handleTaskChange(e, task, status)}
-                          />
-                          <input
-                            type="date"
-                            name="date"
-                            value={task.date}
-                            onChange={(e) => handleTaskChange(e, task, status)}
-                          />
-                          <select
-                            name="priority"
-                            value={task.priority}
-                            onChange={(e) => handleTaskChange(e, task, status)}
+                      <div className="task-content">
+                        <h3>{task.title}</h3>
+                        {task.description && <p>{task.description}</p>}
+                        {task.date && <small>{task.date}</small>}
+                        
+                        <div className="task-meta">
+                          <span>Prioridad: {task.priority}</span>
+                          {task.assignedTo && <span>Asignado a: {task.assignedTo}</span>}
+                        </div>
+                        
+                        <div className="task-item-actions">
+                          <button
+                            onClick={() => moveTask(task, status, -1)}
+                            className="move-task-button"
+                            disabled={status === columns[0]}
+                            aria-label="Mover tarea a la izquierda"
                           >
-                            <option value="low">Baja</option>
-                            <option value="medium">Media</option>
-                            <option value="high">Alta</option>
-                          </select>
-                          <input
-                            type="text"
-                            name="assignedTo"
-                            value={task.assignedTo}
-                            onChange={(e) => handleTaskChange(e, task, status)}
-                          />
-                          <div className="color-options">
-                            {colorOptions.map((option) => (
-                              <div
-                                key={option.value}
-                                className={`color-option ${task.color === option.value ? "selected" : ""}`}
-                                style={{ backgroundColor: option.value }}
-                                onClick={() =>
-                                  handleTaskChange(
-                                    { target: { name: "color", value: option.value } },
-                                    task,
-                                    status
-                                  )
-                                }
-                              >
-                                {task.color === option.value && <FaCheck className="color-check" />}
-                              </div>
-                            ))}
-                          </div>
-                          <button className="save-button" onClick={saveChanges}>
-                            <FaCheck />
+                            <BsArrowLeft />
+                          </button>
+                          
+                          <button
+                            onClick={() => handleTaskDelete(task, status)}
+                            className="delete-task-button"
+                            aria-label="Eliminar tarea"
+                          >
+                            <FaTrash />
+                          </button>
+                          
+                          <button
+                            onClick={() => moveTask(task, status, 1)}
+                            className="move-task-button"
+                            disabled={status === columns[columns.length - 1]}
+                            aria-label="Mover tarea a la derecha"
+                          >
+                            <BsArrowRight />
                           </button>
                         </div>
-                      ) : (
-                        <div className="task-content">
-                          <h3>{task.title}</h3>
-                          <p>{task.description}</p>
-                          <small>{task.date}</small>
-                          <div className="task-meta">
-                            <span>Prioridad: {task.priority}</span>
-                            <span>Asignado a: {task.assignedTo}</span>
-                          </div>
-           
-                          <div className="task-item-actions">
-  <button
-    onClick={() => moveTask(task, status, -1)}
-    className="move-task-button"
-    disabled={status === columns[0]}
-    aria-label="Mover tarea a la izquierda"
-  >
-    <BsArrowLeft />
-  </button>
-  
-  <button
-    onClick={() => handleTaskDelete(task, status)}
-    className="delete-task-button"
-    aria-label="Eliminar tarea"
-  >
-    <FaTrash />
-  </button>
-  
-  <button
-    onClick={() => moveTask(task, status, 1)}
-    className="move-task-button"
-    disabled={status === columns[columns.length - 1]}
-    aria-label="Mover tarea a la derecha"
-  >
-    <BsArrowRight />
-  </button>
-</div>
-
-
-
-                        </div>
-                      )}
+                      </div>
                     </div>
                   ))}
                 </div>
               ) : (
-                <p>No hay tareas</p>
+                <p className="no-tasks">No hay tareas</p>
               )}
             </div>
           </div>

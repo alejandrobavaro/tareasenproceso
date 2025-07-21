@@ -1,9 +1,10 @@
-/* ==================== ESTILOS BASE ==================== */
+/* ============ ESTILOS BASE ============ */
 .modern-footer {
-  background: linear-gradient(135deg, #2c3e50, #4a6fa5);
-  color: #ffffff;
-  padding: 3rem 0 1.5rem;
+  background: #1a1a1a; // Fondo oscuro
+  color: #e0e0e0;
+  padding: 2rem 0 1rem;
   font-family: 'Segoe UI', system-ui, sans-serif;
+  border-top: 1px solid #333;
 }
 
 .footer-content-wrapper {
@@ -12,15 +13,15 @@
   padding: 0 1.5rem;
 }
 
-/* ==================== SECCIÓN PRINCIPAL ==================== */
+/* ============ SECCIÓN PRINCIPAL ============ */
 .footer-main-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* ==================== COLUMNA DE MARCA ==================== */
+/* ============ COLUMNA DE MARCA ============ */
 .footer-brand-column {
   display: flex;
   flex-direction: column;
@@ -31,7 +32,7 @@
     gap: 0.75rem;
     margin-bottom: 1rem;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
     
     &:hover {
       transform: translateX(5px);
@@ -39,21 +40,14 @@
   }
   
   .footer-icon {
-    font-size: 2rem;
-    color: #ffffff;
+    font-size: 1.8rem;
+    color: #28A745; // Color verde para el ícono
   }
   
   .brand-name {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 600;
     color: #ffffff;
-  }
-  
-  .brand-slogan {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 250px;
   }
   
   .footer-contact-links {
@@ -63,27 +57,28 @@
     margin-top: 1rem;
     
     .footer-link {
-      color: rgba(255, 255, 255, 0.8);
+      color: #a0a0a0;
       text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
       
       &:hover {
         color: #ffffff;
-        transform: translateX(5px);
+        transform: translateX(3px);
       }
     }
   }
 }
 
-/* ==================== COLUMNA DE ENLACES ==================== */
+/* ============ COLUMNA DE ENLACES ============ */
 .footer-links-column {
   display: flex;
   flex-direction: column;
   
   .links-title {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
     position: relative;
     padding-bottom: 0.5rem;
     
@@ -92,27 +87,27 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 50px;
+      width: 40px;
       height: 2px;
-      background: #ffffff;
+      background: #28A745; // Línea verde bajo el título
     }
   }
   
   .footer-links-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.8rem;
   }
   
   .footer-link {
-    color: rgba(255, 255, 255, 0.8);
+    color: #a0a0a0;
     text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
     
     &:hover {
       color: #ffffff;
-      transform: translateX(5px);
+      transform: translateX(3px);
     }
     
     &.external-link {
@@ -129,14 +124,15 @@
   }
 }
 
-/* ==================== COLUMNA DE REDES SOCIALES ==================== */
+/* ============ COLUMNA DE REDES SOCIALES ============ */
 .footer-social-column {
   display: flex;
   flex-direction: column;
   
   .social-title {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
     position: relative;
     padding-bottom: 0.5rem;
     
@@ -145,56 +141,56 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 50px;
+      width: 40px;
       height: 2px;
-      background: #ffffff;
+      background: #28A745; // Línea verde bajo el título
     }
   }
   
   .social-icons {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
   
   .social-icon {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
+    color: #a0a0a0;
+    font-size: 1.4rem;
+    transition: all 0.2s ease;
     
     &:hover {
       color: #ffffff;
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
   }
 }
 
-/* ==================== DIVISOR ==================== */
+/* ============ DIVISOR ============ */
 .footer-divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 1.5rem 0;
+  background: #333;
+  margin: 1rem 0;
   border: none;
 }
 
-/* ==================== SECCIÓN INFERIOR ==================== */
+/* ============ SECCIÓN INFERIOR ============ */
 .footer-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
   text-align: center;
   
   .copyright-text {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.85rem;
+    color: #777;
+    font-size: 0.8rem;
   }
 }
 
-/* ==================== RESPONSIVE ==================== */
+/* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
   .footer-main-section {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
   
   .footer-links-grid {
@@ -204,10 +200,6 @@
   .footer-brand-column {
     align-items: center;
     text-align: center;
-    
-    .brand-slogan {
-      max-width: 100%;
-    }
   }
   
   .footer-links-column,
@@ -232,10 +224,14 @@
   }
   
   .footer-icon {
-    font-size: 1.8rem !important;
+    font-size: 1.5rem !important;
   }
   
   .brand-name {
-    font-size: 1.3rem !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .social-icon {
+    font-size: 1.2rem !important;
   }
 }

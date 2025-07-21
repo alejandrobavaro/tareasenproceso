@@ -2,24 +2,26 @@
 .contacto-full-width-container {
   width: 100%;
   padding: 2rem 1rem;
-  // background-color: #f8f9fa;
+  background-color: #121212;
 }
 
 .expanded-form-container {
   max-width: 1200px;
   margin: 0 auto;
-  // background: white;
+  background: #1e1e1e;
   border-radius: 16px;
   padding: 3rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
 }
 
 .main-form-title {
   text-align: center;
-  color: #2d3748;
+  color: #e0e0e0;
   margin-bottom: 2.5rem;
   font-size: 2rem;
   font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
 }
 
 /* ==================== FORMULARIO EXPANDIDO ==================== */
@@ -45,20 +47,26 @@
 
   label {
     font-weight: 500;
-    color: #4a5568;
+    color: #a0a0a0;
     font-size: 1.1rem;
   }
 
   input, textarea {
     padding: 1rem;
-    border: 2px solid #e2e8f0;
+    background-color: #252525;
+    border: 2px solid #444;
     border-radius: 10px;
     font-size: 1rem;
+    color: #e0e0e0;
     transition: all 0.3s ease;
 
+    &::placeholder {
+      color: #666;
+    }
+
     &:focus {
-      border-color: #0b2261;
-      box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.2);
+      border-color: #28A745;
+      box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.2);
       outline: none;
     }
   }
@@ -84,7 +92,7 @@
 }
 
 .submit-btn-large {
-  background-color: #1c3894;
+  background-color: #28A745;
   color: white;
   border: none;
   padding: 1.2rem 3rem;
@@ -98,9 +106,9 @@
   gap: 0.8rem;
 
   &:hover {
-    background-color: #3182ce;
+    background-color: #218838;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(49, 130, 206, 0.3);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
   }
 
   i {

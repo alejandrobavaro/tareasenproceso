@@ -1,3 +1,5 @@
+/* _App.scss - Estilos generales en modo oscuro */
+
 /* ==================== ESTILOS BASE ==================== */
 /* Reset básico y tipografía */
 * {
@@ -9,71 +11,80 @@
 html, body {
   height: 100%;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-
-  color: #2d3748; // Color de texto principal
+  background-color: #121212; // Fondo oscuro principal
+  color: #e0e0e0; // Texto claro para contraste
   line-height: 1.5;
 }
 
 /* ==================== ESTRUCTURA PRINCIPAL ==================== */
-/* Contenedor principal */
-.main-container {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
+/* Contenedor principal - Ajustado para modo oscuro */
+.main-content {
+  background-color: #121212; // Fondo oscuro
   min-height: calc(100vh - 120px); // Altura ajustada considerando header y footer
+  padding: 0.5rem; // Padding mínimo en móvil
 
   @media (min-width: 768px) {
-    padding: 1.5rem;
+    padding: 1rem; // Aumenta padding en tablet
   }
 
   @media (min-width: 1024px) {
-    padding: 2rem;
+    padding: 1.5rem; // Padding mayor en desktop
   }
 }
 
-/* Contenedor del contenido */
-.content-wrapper {
+/* Contenedor del contenido - Centrado y con ancho máximo */
+.content {
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto; // Centrado automático
+  padding: 0 0.5rem; // Padding lateral mínimo
+
+  @media (min-width: 768px) {
+    padding: 0 1rem; // Aumenta padding lateral en tablet
+  }
 }
 
-/* Divisor sutil */
-.divider {
+/* Divisor personalizado para modo oscuro */
+.border-divider {
   border: 0;
   height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1); // Línea sutil clara
   margin: 0;
+  opacity: 1; // Aseguramos que sea visible
 }
 
-/* ==================== ESTILOS PARA LA CALCULADORA ==================== */
-/* Contenedor de la calculadora (se heredarán estos estilos) */
+/* ==================== ESTILOS PARA COMPONENTES GENERALES ==================== */
+/* Contenedores base - Aquí heredarán los componentes hijos */
 .calculator-container {
-  // background-color: white;
-  border-radius: 12px;
-  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
   overflow: hidden;
   margin: 0 auto;
   max-width: 100%;
+  background-color: #1e1e1e; // Fondo oscuro para componentes
+  border: 1px solid rgba(255, 255, 255, 0.05); // Borde sutil
 }
 
 /* ==================== RESPONSIVE ==================== */
-@media (max-width: 767px) {
-  /* Estilos para móvil */
-  .main-container {
-    padding: 0.75rem;
+/* Móvil - Estilos base ya son mobile-first */
+
+/* Tablet - 768px */
+@media (min-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .content {
+    padding: 0 1rem;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  /* Estilos para tablet */
-  .main-container {
-    padding: 1.25rem;
-  }
-}
-
+/* Escritorio - 1024px */
 @media (min-width: 1024px) {
-  /* Estilos para escritorio */
-  .main-container {
+  .main-content {
     padding: 1.5rem;
+  }
+  
+  .content {
+    padding: 0 1.5rem;
   }
 }

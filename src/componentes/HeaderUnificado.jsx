@@ -6,26 +6,22 @@ function HeaderUnificado() {
   const isActive = (path) => useLocation().pathname === path;
 
   return (
-    <header className="header-unificado-moderno">
-      <div className="contenedor-header-moderno">
-        <div className="logo-moderno">
+    <header className="header-unificado-minimal">
+      <div className="contenedor-header-minimal">
+        <div className="logo-minimal">
           <Link to="/">
             <img
               src="/img/02-logos/logocalculadoraretro1.png"
               alt="Logo"
-              className="logo-img-moderno"
+              className="logo-img-minimal"
             />
           </Link>
-          <span className="titulo-moderno">Tareas en Proceso - ToDo</span>
+          <span className="titulo-retro">Tareas en Proceso - ToDo </span>
         </div>
 
-        <nav className="nav-links-moderno">
-          <Link 
-            to="/MainTareasEnProceso" 
-            className={`nav-item ${isActive("/MainTareasEnProceso") ? "activo" : ""}`}
-          >
-            <span className="nav-text">Tareas en Proceso</span>
-            <span className="nav-indicator"></span>
+        <nav className="nav-links-minimal">
+          <Link to="/MainTareasEnProceso" className={isActive("/MainTareasEnProceso") ? "activo" : ""}>
+            Tareas
           </Link>
         </nav>
       </div>

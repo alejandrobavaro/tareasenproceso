@@ -6,12 +6,12 @@ import "../assets/scss/_03-Componentes/_MainContent.scss";
 function MainContent() {
   return (
     <main className="main-content-container">
-      {/* Contenedor principal del contenido */}
+      {/* Contenedor principal del contenido - envuelve todo el contenido de la página */}
       <div className="content-wrapper">
-        {/* Componente de la calculadora - Elemento principal */}
+        {/* Componente principal - Gestor de tareas */}
         <MainTareasEnProceso />
-
-       
+        
+        {/* Componente de publicidad - se muestra debajo del gestor de tareas */}
         <MainPublicidadSlider />
       </div>
     </main>
